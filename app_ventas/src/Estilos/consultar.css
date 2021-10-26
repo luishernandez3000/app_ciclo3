@@ -1,0 +1,34 @@
+h1 {
+    font-size:35px; 
+    color: rgb(0, 0, 71); 
+    text-align: center; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px 4px rgb(87, 83, 83);
+    }
+h2{
+    font-size:35px; 
+    color: black; 
+    text-align: center; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 3px 3px 4px rgb(87, 83, 83);
+}
+
+table{
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+#tablita{
+    text-align: center;
+    background-color: rgb(194, 194, 194);
+    align-content: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+    border-radius: 15px;
+    padding: 40px;
+    
+    
+}
+

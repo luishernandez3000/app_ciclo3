@@ -1,0 +1,78 @@
+
+
+#h2{
+    font: 60px sans-serif;
+    font-family: 'Tahoma';
+    color: white;
+    text-align: center;
+    margin-top: 90px;
+}
+
+#h2_2{
+    font: 30px sans-serif;
+    font-family: 'Tahoma';
+    color: white;
+    text-align: center;
+    
+}
+
+.LogoSS{
+    align-self: center;
+}
+
+.Registro{
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    
+}
+
+input{
+    font-size: 20px;
+    border-radius: 7px;
+    padding: 3px;
+    width: 300px;
+    height: 30px;
+}
+
+label{
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Tahoma';
+    color: white;
+    }
+#docs{
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#boton_enviar{
+    color: white;
+  background: #80c078;    
+  font: bold 120% sans-serif;    
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border-color: #80c078;
+  height: 45px;
+  width: 350px;
+  border: 0px;
+}
+
+#boton_enviar:hover{
+    transition: 0.5s;
+      transform: scale(1.5, 1.5);
+      -webkit-transform: scale(1.1, 1.1);
+  }
+  
+
+.interno{
+    text-align: center;
+    
+    display: block;
+    height: 700px;
+    width: auto;
+    margin: auto;
+    border-radius: 15px;
+
+}
