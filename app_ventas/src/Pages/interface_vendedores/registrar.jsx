@@ -1,5 +1,10 @@
 import Formulario from "../Components/formulario.jsx";
 import Header from "../Components/Header";
+import React from 'react';
+
+
+
+
 
 function Registrar(){
     return(
@@ -7,7 +12,9 @@ function Registrar(){
            <Header>
                 <div>REGISTRAR INFORMACIÓN NUEVO VENDEDOR</div>
             </Header>
-            <Formulario/>
+            <Formulario />
+            
+            
             
         </div>
     );    
