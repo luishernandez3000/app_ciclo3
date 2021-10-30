@@ -1,7 +1,7 @@
 import Botones from '../Components/Botones';
 import Header from '../Components/Header';
 import {Link} from 'react-router-dom';
-import '../Estilos/estilos.css';
+import 'Estilos/estilos.css';
 
 
 function PaginaPrincipal(){

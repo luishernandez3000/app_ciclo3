@@ -1,6 +1,6 @@
 import React, {/* useEffect, */ useState } from 'react'; // se debe importar de esta manera el useEffect para poderlos usar dentro del componente formulario
-import '../Estilos/registrar.css';
-import "../Estilos/consultar.css";
+import 'Estilos/registrar.css';
+import 'Estilos/consultar.css';
 
 
 

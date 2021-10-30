@@ -1,37 +1,48 @@
-body{
-    background-color: white;
-    width: 100%;
-    height: 100vh;
+ .textoIS{
+
     display: flex;
     justify-content: center;
     align-items: center;
-    font: 120% sans-serif;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .textoIS{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-  }
+
   #IS{
-    color: #112031;
+    color: #122b4a;
     text-align: center;
-    font-size: 150%;
+    font-size: 50px;
+    font-family: 'Tahoma';
   }
+
+  .formulario{
+    text-align: center;
+    width: auto;
+    height:300px;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
   .entradaTextoCedula{
     position: relative;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
     justify-content: center;
     align-items: center;
     height: 1.8cm;
   }
+
   .entradaTextoContraseña{
     position: relative;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
     justify-content: center;
     align-items: center;
     height: 1.8cm;
+    margin-top: 10px;
   }
+
   input{
     background: none;
     border: 2px solid #112031;
@@ -43,16 +54,17 @@ body{
     outline: none;
     color: #112031;
   }
-  input + label{
+
+  label{
+    text-align: center;
     transition: all .3s ease;
-    position: absolute;
-    top: .8em;
-    left: .5em;
     color: #112031;
-    background: white;
     border-radius: 2mm;
+    padding: 5px;
+    margin: auto;
     
   }
+
   input:focus + label{
     transition: all .3s ease;
     top: -.2em;
@@ -60,57 +72,104 @@ body{
     font-size: 1em;
     color: #112031;
     z-index: 100;
-    background: white;
+    
     border: none;
     text-align: center;
   }
+
   .LogoSS{
     size: 2cm;
     display: flex;
     justify-content: center;
+    margin-top: 45px;
   
   }
+
   #logo{
     size: 2cm;
     width: 2cm;
   }
   
-  .Acceder{
-    display: contents;
+ 
+
+ 
+  
+  .botones_2{
+    
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    
+    
   }
   
-  .Google{
-    display:contents;
-  }
-  
-  
-  #Acceder{
+ #acceder{
     color: #112031;
-    background: white;    
     font: bold 120% sans-serif;    
-    margin-left: 105px;
+    margin-right: 20px;
     margin-top: 20px;
     border-radius: 20px;
     border-color: #112031;
+    width: 110px;
+    height: 48px;
     
   }
-  #Google{
-    color: white;
-    background-color: #112031;
+
+    
+  #acceder:hover {
+    transition: 0.5s;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    }
+  
+  #registrar{
+    color: #112031;   
     font: bold 120% sans-serif;
-    margin-right: 85px;
-    border: none;
-    margin-top: 22px;
+    margin-left: 10px;
+    margin-top: 20px;
     border-radius: 20px;
-    
+    border-color: #112031;
+    width: 110px;
+    height: 48px;
     
   }
+
+  
+
+  
+  #registrar:hover {
+    transition: 0.5s;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    }
+
+ 
+
+.Google:hover {
+    transition: 0.5s;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    }
+
+  #botonGoogle{
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
   #logoGoogle{
     width: 20px;
     border-right: 2mm;
   }
+
   #olvide{
-    margin-left: 365px;
+    margin-left: auto;
+    margin-right: auto;
     color: #112031;
     background: white;    
     font: 80% sans-serif;
@@ -118,3 +177,32 @@ body{
     text-decoration: underline;
     font-weight: bold;
   }
+
+  .olvideContraseña{
+    text-align: center;
+    margin-top: 9px;
+  }
+
+  .Botones_1{
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    display: flex;
+    padding: 10px;
+  }
+
+  .Google{
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    display: flex;
+    padding: 10px;
+  }
+
+  
