@@ -7,6 +7,7 @@ import "Estilos/login.css";
 
 
 function Login() {
+  
   function responseGoogle(response) {
     if (response && response.tokenId) {
       fetch("http://localhost:8080/login", {
@@ -34,6 +35,7 @@ function Login() {
         });
     }
   }
+
   return (
     <div>
       
@@ -60,9 +62,9 @@ function Login() {
                 </div>
               
                 <div className="botones_2">
-                  <Link  to='/modulos' id='link1'><button id="acceder">Acceder </button></Link> 
+                  <Link  to='/modulos'><button id="acceder">Acceder </button></Link> 
                 
-                  <Link to='/registro' id='link2'><button id="registrar">Regístrate </button></Link>  
+                  <Link to='/registro'><button id="registrar">Regístrate </button></Link>  
                 </div>
 
                 <div className="Botones_1">

@@ -8,20 +8,23 @@ h1 {
     text-shadow: 3px 3px 4px rgb(87, 83, 83);
     }
 
-.Formulario{
+.Formulario2{
     
     text-align: center;
     background-color: rgb(255, 255, 255);
-    display: block;
+    display: grid;
     height: 900px;
-    width: 1000px;
+    width: auto;
     margin: auto;
-    border-radius: 15px;
+    
 }
 
-.interno{
-    margin-top:  90px;
-   
+.interno2{
+    margin-top: 90px;
+    width: auto;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 5px;
     
 }
 
@@ -34,15 +37,16 @@ textarea{
     border-radius: 7px;
 }
 
-input{
+.interno2 input{
     font-size: 20px;
     border-radius: 7px;
     padding: 5px;
-    border-color:rgb(233, 233, 233)
+    border-color:rgb(233, 233, 233);
+    width: auto;
 }
 
-label{
-    text-align: left;
+.interno2 label{
+    text-align: center;
     font-size: 20px;
     font-family: 'Tahoma';
     }
@@ -66,7 +70,6 @@ label{
         font-size: 20px;
         font-style:Large;
         font-family:Verdana;
-        
         border-radius: 15px;
         border: 0px;
         background-image: -webkit-linear-gradient(top, #5bd6a3, #5bd6a3);

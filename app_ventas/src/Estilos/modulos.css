@@ -6,19 +6,22 @@ h1{
 }
 
 #BotonesModulos{
-    text-align: right;
-    display: inline-flex;
-    margin-top: 20px;
+    text-align: center;
+    display: -ms-grid;
+    display: grid;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
     width: auto;
-    height: auto;
+    height: 120px;
+    text-decoration: none;
+    padding: 5px;
 }
 
 #boton1 , #boton2 , #boton3{
-    text-align: right;
+    text-align: center;
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
@@ -31,7 +34,12 @@ h1{
     justify-content: center;
     background-color: rgb(179, 178, 178);
     cursor: pointer;
-}
+    text-decoration: none;
+    color: black;
+   }
+
+
+
 
 #boton1:hover{
     transition: 0.5s;

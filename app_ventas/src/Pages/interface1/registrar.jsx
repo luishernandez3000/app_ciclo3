@@ -1,23 +1,24 @@
+import Header from 'Components/Header';
 import 'Estilos/registrar1.css';
-import Logo from 'Imagenes/logo.png';
+
 
 function Registro() {
     return (
            
         <div>
-                    <div className="LogoSS">
-                        <img src={Logo} classNameName='logo' alt='LogodeSaleSoft' id="logo"/>
-                    </div>
+                    <Header>
+                        
+                        <div className="registrate">
 
-                <div className="registrate">
+                            <h2 id="h2">
+                                Regístrate
+                            </h2>
 
-                    <h2 id="h2">
-                        Regístrate
-                    </h2>
+                            <h2 id="h2_2">¡Es fácil y rápido!</h2>
+                        
+                        </div>
+                    </Header>
 
-                    <h2 id="h2_2">¡Es fácil y rápido!</h2>
-                
-                </div>
                 <div className='Registro'>
                     <form action="" >
                         <div>

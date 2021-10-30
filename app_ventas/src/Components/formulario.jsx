@@ -46,20 +46,20 @@ const Formulario =() => {
 
     return (
            
-        <div className='Formulario'>
+        <div className='Formulario2'>
             <form onSubmit={submitForm}>
-                <div className='interno'>
-                <label htmlFor='nombres' id="etiqueta_nombre"><b>Nombres: </b></label><br/>
-                <input value={nombres}  onChange={(e) =>{setNombre(e.target.value);}}  type="text" id="nombres" size="35px" required/><br></br><br/>
-                <label htmlFor='apellidos' id="etiqueta_apellidos"><b>Apellidos: </b></label><br/>
-                <input value={apellidos}  onChange={(e) =>{setApellidos(e.target.value);}}  type="text" id="apellidos" size="35px" required/><br></br><br/>
-                <label htmlFor='label_genero' id="etiqueta_doc"><b>Género: </b></label>
-                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}} id="genero1"  type="radio" name="genero"  />
-                <label htmlFor="genero1">Femenino</label>
-                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}}  id="genero2" type="radio" name="genero" />
-                <label htmlFor="genero2">Masculino</label>
-                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}} id="genero3" type="radio" name="genero" />
-                <label htmlFor="genero3">Otro</label><br></br><br/>
+                <div className='interno2'>
+                <label htmlFor='nombres'><b>Nombres: </b></label><br/>
+                <input value={nombres}  onChange={(e) =>{setNombre(e.target.value);}}  type="text" size="35px" required/><br></br><br/>
+                <label htmlFor='apellidos'><b>Apellidos: </b></label><br/>
+                <input value={apellidos}  onChange={(e) =>{setApellidos(e.target.value);}}  type="text"  size="35px" required/><br></br><br/>
+                <label htmlFor='genero'><b>Género: </b></label>
+                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}} type="radio" name="genero"  />
+                <label htmlFor="genero">Femenino</label>
+                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}}  type="radio" name="genero" />
+                <label htmlFor="genero">Masculino</label>
+                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}} type="radio" name="genero" />
+                <label htmlFor="genero">Otro</label><br></br><br/>
                 <label htmlFor="documentos"><b>Documento de identidad: </b></label>
                 <select value={tipo}  onChange={(e) =>{setTipo(e.target.value);}}  id="docs" className="docs1" required defaultValue={0}>
                     <option disabled value={0}>Seleccione una opción</option>
@@ -69,14 +69,14 @@ const Formulario =() => {
                     <option>D.E.</option>
                 </select><br/>
                 <input value={documento1}  onChange={(e) =>{setDocumento1(e.target.value);}}  type="text" size="35px" required/><br></br><br/>
-                <label htmlFor='fecha' id="fecha"><b>Fecha de Nacimiento: </b></label>
+                <label htmlFor='fecha'><b>Fecha de Nacimiento: </b></label>
                 <input value={fecha}  onChange={(e) =>{setFecha(e.target.value);}} type="date" required/><br></br><br/>
-                <label htmlFor='correo' id="email"><b>Correo electrónico: </b></label><br/>
-                <input value={correo}  onChange={(e) =>{setCorreo(e.target.value);}} id='correo' type="email" size="35px" required/><br></br><br/>  
+                <label htmlFor='correo'><b>Correo electrónico: </b></label><br/>
+                <input value={correo}  onChange={(e) =>{setCorreo(e.target.value);}} type="email" size="35px" required/><br></br><br/>  
                 <label htmlFor='telefono' ><b>Teléfono: </b> </label><br/>
-                <input value={telefono}  onChange={(e) =>{setTelefono(e.target.value);}} id='telefono' type="tel" size="35px" max={10} required/><br></br><br/>
+                <input value={telefono}  onChange={(e) =>{setTelefono(e.target.value);}} type="tel" size="35px" max={10} required/><br></br><br/>
                 <label htmlFor='direccion' ><b>Dirección de Residencia: </b> </label> <br/>
-                <input value={direccion}  onChange={(e) =>{setDireccion(e.target.value);}} id='direccion' type="text" size="35px" required/><br></br><br/>
+                <input value={direccion}  onChange={(e) =>{setDireccion(e.target.value);}}  type="text" size="35px" required/><br></br><br/>
                 <div id="comentarios"><label htmlFor='comentarios'><b>Comentarios: </b></label><br/>
                     <textarea value={comentarios}  onChange={(e) =>{setComentarios(e.target.value);}} rows="9" cols="60"></textarea><br></br>
                 </div>
