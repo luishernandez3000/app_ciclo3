@@ -1,5 +1,5 @@
 import React, {/* useEffect, */ useState } from 'react'; // se debe importar de esta manera el useEffect para poderlos usar dentro del componente formulario
-import 'Estilos/registrar.css';
+
 import 'Estilos/consultar.css';
 
 
@@ -54,14 +54,14 @@ const Formulario =() => {
                 <label htmlFor='apellidos'><b>Apellidos: </b></label><br/>
                 <input value={apellidos}  onChange={(e) =>{setApellidos(e.target.value);}}  type="text"  size="35px" required/><br></br><br/>
                 <label htmlFor='genero'><b>Género: </b></label>
-                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}} type="radio" name="genero"  />
+                <input value='Femenino'  onChange={(e) =>{setGenero(e.target.value);}} id='radiob' type="radio" name="genero"  />
                 <label htmlFor="genero">Femenino</label>
-                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}}  type="radio" name="genero" />
+                <input value='Masculino'  onChange={(e) =>{setGenero(e.target.value);}} id='radiob' type="radio" name="genero" />
                 <label htmlFor="genero">Masculino</label>
-                <input value={genero}  onChange={(e) =>{setGenero(e.target.value);}} type="radio" name="genero" />
+                <input value='Otro'  onChange={(e) =>{setGenero(e.target.value);}} id='radiob' type="radio" name="genero" />
                 <label htmlFor="genero">Otro</label><br></br><br/>
                 <label htmlFor="documentos"><b>Documento de identidad: </b></label>
-                <select value={tipo}  onChange={(e) =>{setTipo(e.target.value);}}  id="docs" className="docs1" required defaultValue={0}>
+                <select value={tipo}  onChange={(e) =>{setTipo(e.target.value);}}  id="docs" required defaultValue={0}>
                     <option disabled value={0}>Seleccione una opción</option>
                     <option>C.C.</option>
                     <option>T.I.</option>

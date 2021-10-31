@@ -15,7 +15,7 @@ function PaginaPrincipal(){
             <div className="botones" >
                 
                     <Link to='/registrar_vendedores'id='boton1v'>Registrar informacion de nuevo vendedor</Link> 
-                    <Link to='/'id='boton2v'>Consultar/Modificar informacion de vendedores</Link>
+                    <Link to='/consultar_vendedores'id='boton2v'>Consultar/Modificar informacion de vendedores</Link>
             </div>
         </div>
     );

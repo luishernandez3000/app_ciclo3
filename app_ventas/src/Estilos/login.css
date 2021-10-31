@@ -18,44 +18,49 @@
   .formulario{
     text-align: center;
     width: auto;
-    height:300px;
+    height:auto;
     align-items: center;
     margin-top: 20px;
     padding: 10px;
+    display: -ms-grid;
+    display: grid;
   }
 
   .entradaTextoCedula{
-    position: relative;
+    
     display: -ms-grid;
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 1.8cm;
+    height: 100px;
+    width: auto;
   }
 
   .entradaTextoContraseña{
-    position: relative;
+    width: auto;
     display: -ms-grid;
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 1.8cm;
+    height: 100px;
     margin-top: 10px;
   }
 
-  input{
+  .entradaTextoCedula input, .entradaTextoContraseña input{
     background: none;
     border: 2px solid #112031;
     font-size: 1.7em;
     border-radius: 10px;
     padding: 0 .5em;
     height: 50px;
-    width: 500px;
+    width: auto;
     outline: none;
     color: #112031;
   }
 
-  label{
+  .formulario label{
+    font-family: 'Tahoma';
+    font-size: 20px;
     text-align: center;
     transition: all .3s ease;
     color: #112031;
@@ -65,17 +70,7 @@
     
   }
 
-  input:focus + label{
-    transition: all .3s ease;
-    top: -.2em;
-    left: .7em;
-    font-size: 1em;
-    color: #112031;
-    z-index: 100;
-    
-    border: none;
-    text-align: center;
-  }
+  
 
   .LogoSS{
     size: 2cm;

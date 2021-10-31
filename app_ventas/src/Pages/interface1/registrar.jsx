@@ -19,7 +19,7 @@ function Registro() {
                         </div>
                     </Header>
 
-                <div className='Registro'>
+                <div className='Registro2'>
                     <form action="" >
                         <div>
                         <label id="etiqueta_nombre">Nombres: </label><br/>
@@ -43,8 +43,8 @@ function Registro() {
                         <input type="tel" size="35px" max={10} required/><br></br><br/>
                         
                         
-                        <div className='boton'>
-                            <br></br><button  type='submit' id="boton_enviar">Registrar</button> <br></br>
+                        <div className='botonlog'>
+                            <br></br><button  type='submit' id="boton_registrolog">Registrar</button> <br></br>
                         </div>
 
                     </div>

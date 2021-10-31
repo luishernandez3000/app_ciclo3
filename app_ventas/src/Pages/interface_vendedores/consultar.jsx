@@ -1,7 +1,7 @@
 
 import React, {useEffect, useState} from "react";
-import "../Estilos/consultar.css";
-import Header from "../Components/Header";
+import "Estilos/consultar.css";
+import Header from "Components/Header";
 import { Link } from "react-router-dom";
 
 

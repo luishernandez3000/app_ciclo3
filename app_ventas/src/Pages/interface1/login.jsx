@@ -49,11 +49,11 @@ function Login() {
             <form action="" className="formulario">
               <div className="entradaTextoCedula">
                 <label for="cedula">Número de cédula</label>
-                <input type="cedula" id="cedula" />
+                <input type="cedula"  />
               </div>
               <div className="entradaTextoContraseña">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" />
+                <input type="password"  />
               </div>
             
               

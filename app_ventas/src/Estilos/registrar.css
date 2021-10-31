@@ -12,6 +12,7 @@ h1 {
     
     text-align: center;
     background-color: rgb(255, 255, 255);
+    display: -ms-grid;
     display: grid;
     height: 900px;
     width: auto;
@@ -41,23 +42,29 @@ textarea{
     font-size: 20px;
     border-radius: 7px;
     padding: 5px;
-    border-color:rgb(233, 233, 233);
+    border-color:rgb(209, 209, 209);
     width: auto;
 }
 
 .interno2 label{
     text-align: center;
-    font-size: 20px;
+    font-size: 23px;
     font-family: 'Tahoma';
     }
 
 #docs{
     font-size: 20px;
-    border-radius: 7px; 
+    border-radius: 7px;
+    margin-bottom: 5px; 
 }
 
 .boton{
     margin-top: 30px;
+}
+
+#radiob{
+    width: auto;
+    height: auto;
 }
 
 

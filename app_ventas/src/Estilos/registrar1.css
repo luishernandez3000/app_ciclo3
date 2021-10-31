@@ -29,7 +29,7 @@
     font-family: 'Tahoma';
 }
 
-.Registro{
+.Registro2{
     text-align: center;
     width: auto;
     margin: auto;
@@ -42,16 +42,19 @@
     
 }
 
-label{
-    font-size:larger;
+.Registro2 label{
+    
     color: #1e3551;
     font-family: 'Tahoma';
+    font-size: 25px;
 }
 
-input{
-    width: 300px;
+.Registro2 input{
+    width: auto;
     height: 35px;
     font-size: 20px;
+    border-radius: 7px;
+    border-color: #1e3551;
 
 }
 
@@ -60,14 +63,17 @@ input{
 }
 
 .docs1{
-    height: 30px;
+    height: 35px;
     border-radius: 7px;
     padding: 5px;
     margin-bottom: 5px;
 }
 
+.botonlog{
+    margin: auto;
+}
 
-#boton_enviar{
+#boton_registrolog{
 
     color:white;
     margin: 0px 50px;
@@ -89,7 +95,7 @@ input{
     
 }
 
-#boton_enviar:hover {
+#boton_registrolog:hover {
 color:white;
 background-color: rgb(140, 140, 140);
 transition: 0.5s;
