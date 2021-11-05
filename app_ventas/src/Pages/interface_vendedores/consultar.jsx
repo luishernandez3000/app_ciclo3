@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const VendedoresBackend = [         // array que contiene los vendedores
   {
       nombres: 'Carlos Andres',
@@ -67,34 +68,6 @@ const VendedoresBackend = [         // array que contiene los vendedores
   },
 ]
 
-const Consultar = () => {
-
-  const [vendedores, setVendedores] = useState([]);
-
-  useEffect(() => {
-      setVendedores([VendedoresBackend])  // obtener lista de vendedores desde el backend
-  }, []);
-
-  return (
-    <div>
-      <Header>
-        <div>LISTADO DE VENDEDORES</div>
-      </Header>
-
-      <Tabla listaVendedores= {vendedores}></Tabla>        
-      <div className="boton">
-        <br></br>
-        <Link to="/registrar_vendedores">
-          <button type="button" id="boton_enviar">
-            Agregar vendedor
-          </button>
-        </Link>
-        <br></br>
-      </div>
-    </div>
-  );
-};
-
 
 const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props llamado listaVendedores
 
@@ -127,7 +100,7 @@ const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props ll
             {listaVendedores.map((vendedores) => {
               return (
                 <tr>
-                  <td>{vendedores.Nombres}</td>
+                  <td>{vendedores.nombres}</td>
                   <td>{vendedores.apellidos}</td>
                   <td>{vendedores.genero}</td>
                   <td>{vendedores.documento}</td>
@@ -146,6 +119,33 @@ const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props ll
   );
 }
 
+const Consultar = () => {
+
+  const [vendedores, setVendedores] = useState([]);
+
+  useEffect(() => {
+      setVendedores([...VendedoresBackend])  // obtener lista de vendedores desde el backend
+  }, []);
+
+  return (
+    <div>
+      <Header>
+        <div>LISTADO DE VENDEDORES</div>
+      </Header>
+
+      <Tabla listaVendedores= {vendedores}></Tabla>        
+      <div className="boton">
+        <br></br>
+        <Link to="/registrar_vendedores">
+          <button type="button" id="boton_enviar">
+            Agregar vendedor
+          </button>
+        </Link>
+        <br></br>
+      </div>
+    </div>
+  );
+};
 
 export default Consultar;
 
