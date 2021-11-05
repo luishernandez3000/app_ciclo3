@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Switch, Route,} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Login from 'Pages/interface1/login';
 import Registro from 'Pages/interface1/registrar';
 import Modulos from 'Pages/interface1/modulos';
@@ -9,34 +9,16 @@ import Consultar from 'Pages/interface_vendedores/consultar';
 
 function App() {
   return (
-    
-<Router>
-      <Switch> 
-         
-          <Route path="/registro" exact>
-             <Registro/>
-          </Route>
-          <Route path="/modulos" exact>
-             <Modulos/>
-          </Route>
-          <Route path="/vendedores" exact>
-             <PaginaPrincipal/>
-          </Route>
-          <Route path="/registrar_vendedores" exact>
-             <Registrar/>
-          </Route>
-          <Route path="/consultar_vendedores" exact>
-             <Consultar/>
-          </Route>
-          <Route path="/" exact>
-             <Login/>
-          </Route>
-          
-
-          
-       </Switch>
-   </Router>
-
+    <BrowserRouter>
+         <Routes>
+            <Route path="/" element={<Login/>} exact />
+            <Route path="/registro" element={<Registro/>} exact/>
+            <Route path="/modulos" element={<Modulos/>} exact/> 
+            <Route path="/vendedores" element={<PaginaPrincipal/>} exact/>
+            <Route path="/registrar_vendedores" element={<Registrar/>} exact/>
+            <Route path="/consultar_vendedores" element={<Consultar/>} exact/>
+         </Routes>
+    </BrowserRouter>
   );
 }
 
