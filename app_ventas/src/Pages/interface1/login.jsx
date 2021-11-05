@@ -42,6 +42,9 @@ function Login() {
             <div className="LogoSS">
               <img src={logo}  alt="logo" id="logo" />
             </div>
+            <div className='SS'>
+            <span id='Salessoft'><b>SalesSoft</b></span>
+            </div>
             <div className="textoIS">
               <span id="IS"><b>Iniciar sesión</b></span>
             </div>

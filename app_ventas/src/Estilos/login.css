@@ -8,11 +8,29 @@
     margin-right: auto;
   }
 
-  #IS{
+  .SS{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #Salessoft{
     color: rgb(0, 0, 71);
     text-align: center;
     font-size: 50px;
     font-family: 'Tahoma';
+    text-shadow: 3px 3px 4px rgb(87, 83, 83);
+  }
+
+  #IS{
+    color: rgb(0, 0, 71);
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Tahoma';
+    margin-top: 60px;
   }
 
   .formulario{
