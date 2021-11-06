@@ -1,3 +1,4 @@
+
 import React, {useEffect, useState, useRef} from "react";
 import "Estilos/consultar.css";
 import Header from "Components/Header";
@@ -93,15 +94,17 @@ const FilaVendedor = ({vendedores}) =>{
 
   });
 
-const actualizarVendedor =() =>{
-  console.log(infoNuevoVendedor);
-};
+  const actualizarVendedor =() =>{
+    console.log(infoNuevoVendedor);
+  };
 
-const eliminarVendedor=() =>{
+  // const eliminarVendedor= () =>{
+        // const options{}
 
-} // --> funcion para eliminar vendedores
+        // await axios
+// --> funcion para eliminar vendedores
 
-  return(
+return(
     <tr>
       {edit ? (
     
@@ -146,28 +149,28 @@ const eliminarVendedor=() =>{
         <div className='iconosform'>
           {edit? (
           <>
-          <Tooltip title='Confirmar cambios' arrow><i onClick={()=> actualizarVendedor()} className="fas fa-check"/></Tooltip>
-          <Tooltip title='Descartar cambios' arrow><i onClick={()=>setEdit(!edit)} className='fas fa-ban'/></Tooltip>
+          <Tooltip title='Confirmar cambios' arrow><i onClick={()=> actualizarVendedor()} className='fas fa-check text-green-700 hover:text-green-500'/></Tooltip>
+          <Tooltip title='Descartar cambios' arrow><i onClick={()=>setEdit(!edit)} className='fas fa-ban text-red-700 hover:text-red-500'/></Tooltip>
           </>
           ):(
           <>
-            <Tooltip title='Editar información' arrow><i onClick={()=>setEdit(!edit)} className='fas fa-pencil-alt'/></Tooltip>
-            <Tooltip title='Eliminar vendedor' arrow><i onClick={()=>setOpenDialog(true)} className='fas fa-trash'/></Tooltip>
+            <Tooltip title='Editar información' arrow><i onClick={()=>setEdit(!edit)} className='fas fa-pencil-alt text-yellow-700 hover:text-yellow-500'/></Tooltip>
+            <Tooltip title='Eliminar vendedor' arrow><i onClick={()=>setOpenDialog(true)} className='fas fa-trash text-red-700 hover:text-red-500'/></Tooltip>
           </>
           )
         }
         </div>
-        <Dialog open={openDialog}>
+        <Dialog open={openDialog}> 
           <div>
-            <h1>¿Está seguro de eliminar este registro?</h1>
-            <button>Sí</button>
-            <button>No</button>
+            <h3>¿Está seguro de eliminar este registro?</h3>
+            <button /*onClick={()=>eliminarVendedor()}*/>Sí </button>
+            <button onClick={()=>setOpenDialog(false)}>No</button>
           </div>
         </Dialog>
       </td>
     </tr>
   );
-}
+};
 
 
 const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props llamado listaVendedores

@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Login from 'Pages/interface1/login';
 import Registro from 'Pages/interface1/registrar';
@@ -6,6 +5,7 @@ import Modulos from 'Pages/interface1/modulos';
 import PaginaPrincipal from 'Pages/interface_vendedores/PaginaPpal';
 import Registrar from 'Pages/interface_vendedores/registrar';
 import Consultar from 'Pages/interface_vendedores/consultar';
+
 
 function App() {
   return (
