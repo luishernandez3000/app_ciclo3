@@ -77,7 +77,7 @@ const Registrar=() => {
             </div>
             </form>
 
-            <ToastContainer position="bottom-center" autoClose={2000}/>
+            <ToastContainer position="bottom-center" autoClose={1500}/>
             
         </div>
             

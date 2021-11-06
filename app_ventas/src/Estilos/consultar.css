@@ -13,18 +13,40 @@ h2{
     color: rgb(12, 16, 19)
 }
 
-#tablita th{
-    padding: 12px;
+.tablita th, .tablita td{
+    padding: 10px;
+    border: 1px solid #ddd;  
 }
 
-#tablita{
-    text-align: center;
-    margin: auto;
-    width: auto;
-    height: auto;
+.tablita th{
+    background-color: #848fa8;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
-.tablaVendedores table{
+.tablita{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.tablita tr:nth-child(even){
+    background-color: #c9cad1;
+}
+
+.tablita tr:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.iconosform{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+#tablaVendedores .tablita{
     text-align: center;
     margin-top: 50px;
     margin-left: auto;
@@ -34,8 +56,9 @@ h2{
     height: 150px; /* cambio reciente, borrar si no funciona bien*/
 }
 
-.tablaVendedores{
+#tablaVendedores{
     text-align: center;
+    width: auto;
 }
 
 .boton{
