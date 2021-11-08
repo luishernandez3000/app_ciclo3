@@ -1,82 +1,68 @@
-
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import "Estilos/consultar.css";
 import Header from "Components/Header";
 import { Link } from "react-router-dom";
 import { nanoid } from "nanoid";
 import Tooltip from '@mui/material/Tooltip';
 import Dialog from '@mui/material/Dialog';
+import nuevoVendedor from './registrar';
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
-const VendedoresBackend = [         // array que contiene los vendedores
-  {
-      nombres: 'Carlos Andres',
-      apellidos: 'Suarez Salazar',
-      genero: 'masculino',
-      tipo: 'CC',
-      documento: 123456,
-      fecha: '16/07/1993',
-      correo: 'carlosandres16_@hotmail.com',
-      telefono: 3146050436,
-      direccion: 'carrera102#69-22',
-      comentarios: 'ninguno',
-  },
-  {
-      nombres: 'Andrea Kate',
-      apellidos: 'Mendez',
-      genero: 'Femenina',
-      tipo: 'PASAPORTE',
-      documento: 123456,
-      fecha: '16/07/1993',
-      correo: 'carlosandres16_@hotmail.com',
-      telefono: 3146050436,
-      direccion: 'carrera102#69-22',
-      comentarios: 'ninguno',
-  },
-  {
-      nombres: 'Wilder Enrique',
-      apellidos: 'Ramirez Buitrago',
-      genero: 'Masculino',
-      tipo: 'CC',
-      documento: 123456,
-      fecha: '16/07/1993',
-      correo: 'carlosandres16_@hotmail.com',
-      telefono: 3146050436,
-      direccion: 'carrera102#69-22',
-      comentarios: 'ninguno',
-  },
-  {
-      nombres: 'Carlos Rodolfo',
-      apellidos: 'Suarez Arias',
-      genero: 'masculino',
-      tipo: 'CC',
-      documento: 123456,
-      fecha: '16/07/1993',
-      correo: 'carlosandres16_@hotmail.com',
-      telefono: 3146050436,
-      direccion: 'carrera102#69-22',
-      comentarios: 'ninguno',
-  },
-  {
-    nombres: 'Blanca Cecilia',
-    apellidos: 'Arias de Suarez',
-    genero: 'Femenino',
-    tipo: 'CC',
-    documento: 123456,
-    fecha: '16/07/1993',
-    correo: 'carlosandres16_@hotmail.com',
-    telefono: 3146050436,
-    direccion: 'carrera102#69-22',
-    comentarios: 'ninguno',
-  },
-]
+const Consultar = () => {
+
+  const [vendedores, setVendedores] = useState([]);
+  const [ejecutarConsulta, setEjecutarConsulta] = useState(true)
+
+  useEffect(() => {
+    const obtenerVendedores = async () => {
+      const options = {
+        method: "GET",
+        url: "http://localhost:5000/miaplicacion",
+      };
+
+      await axios
+        .request(options)
+        .then(function (response) {
+          setVendedores(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    };
+    if (ejecutarConsulta){
+      obtenerVendedores();
+      setEjecutarConsulta(false);
+    }
+  }, [ejecutarConsulta])
+
+     
+
+  return (
+    <div>
+      <Header>
+        <div>LISTADO DE VENDEDORES</div>
+      </Header>
+
+      <Tabla listaVendedores= {vendedores} setEjecutarConsulta={setEjecutarConsulta}></Tabla>        
+      <div className="boton">
+        <br></br>
+        <Link to="/registrar_vendedores">
+          <button type="button" id="boton_enviar">
+            Agregar vendedor
+          </button>
+        </Link>
+        <br></br>
+        <ToastContainer position="bottom-center" autoClose={1500}/>
+      </div>
+    </div>
+  );
+};
 
 
-
-
-
-const FilaVendedor = ({vendedores}) =>{
+const FilaVendedor = ({vendedores, setEjecutarConsulta}) =>{
   const [edit, setEdit] = useState(false);
   const [openDialog, setOpenDialog] = useState(false)
 
@@ -94,15 +80,49 @@ const FilaVendedor = ({vendedores}) =>{
 
   });
 
-  const actualizarVendedor =() =>{
-    console.log(infoNuevoVendedor);
+  const actualizarVendedor = async () =>{
+    const options = {
+      method: 'PATCH',
+      url: 'http://localhost:5000/miaplicacion/editar',
+      headers: {'Content-Type': 'application/json'},
+      data: { ...infoNuevoVendedor, id: vendedores._id }
+    };
+    
+    await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+      toast.success("¡ Datos del vendedor actualizados exitosamente !");
+      setEdit(false);
+      setEjecutarConsulta(true)
+    })
+    .catch(function (error) {
+      toast.error("Error al actualizar la información");
+      console.error(error);
+    });
   };
 
-  // const eliminarVendedor= () =>{
-        // const options{}
+  const eliminarVendedor= async () =>{
+    const options = {
+      method: 'DELETE',
+      url: 'http://localhost:5000/miaplicacion/eliminar',
+      headers: {'Content-Type': 'application/json'},
+      data: {id: vendedores._id}
+    };
 
-        // await axios
-// --> funcion para eliminar vendedores
+    await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+      toast.success("¡ Registro eliminado exitosamente !");
+      setEjecutarConsulta(true)
+      setOpenDialog(false)
+    })
+    .catch(function (error) {
+      console.error(error);
+      toast.error("Error al eliminar el registro");
+    });
+  }
 
 return(
     <tr>
@@ -163,7 +183,7 @@ return(
         <Dialog open={openDialog}> 
           <div>
             <h3>¿Está seguro de eliminar este registro?</h3>
-            <button /*onClick={()=>eliminarVendedor()}*/>Sí </button>
+            <button onClick={()=>eliminarVendedor()}>Sí </button>
             <button onClick={()=>setOpenDialog(false)}>No</button>
           </div>
         </Dialog>
@@ -173,12 +193,10 @@ return(
 };
 
 
-const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props llamado listaVendedores
+const Tabla=({ listaVendedores, setEjecutarConsulta }) => { 
 
-  const form = useRef(null)
-
-  useEffect(()=>{
-      console.log("este es el listado de vendedores: ", listaVendedores);
+   useEffect(()=>{
+      console.log("este es el listado de vendedores: ", ...listaVendedores, nuevoVendedor);
   }, [listaVendedores]);
 
   return (
@@ -204,7 +222,7 @@ const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props ll
 
           <tbody>
             {listaVendedores.map((vendedores) => {
-              return (<FilaVendedor key={nanoid()} vendedores={vendedores}/>);
+              return (<FilaVendedor key={nanoid()} vendedores={vendedores} setEjecutarConsulta={setEjecutarConsulta}/>);
             })}
           </tbody>
         </table>
@@ -214,33 +232,4 @@ const Tabla=({ listaVendedores }) => {  // le estoy dando a la tabla un props ll
 }
 
 
-const Consultar = () => {
-
-  const [vendedores, setVendedores] = useState([]);
-
-  useEffect(() => {
-      setVendedores([...VendedoresBackend])  // obtener lista de vendedores desde el backend
-  }, []);
-
-  return (
-    <div>
-      <Header>
-        <div>LISTADO DE VENDEDORES</div>
-      </Header>
-
-      <Tabla listaVendedores= {vendedores}></Tabla>        
-      <div className="boton">
-        <br></br>
-        <Link to="/registrar_vendedores">
-          <button type="button" id="boton_enviar">
-            Agregar vendedor
-          </button>
-        </Link>
-        <br></br>
-      </div>
-    </div>
-  );
-};
-
 export default Consultar;
-

@@ -5,17 +5,16 @@ import 'Estilos/consultar.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
-
-
-
-
+import axios from "axios";
 
 
 const Registrar=() => {
 
+
+
     const form = useRef(null);
 
-    const submitForm=(e) =>{
+    const submitForm= async (e) =>{
         e.preventDefault();
         const fd = new FormData(form.current);
 
@@ -23,9 +22,38 @@ const Registrar=() => {
         fd.forEach((value, key)=>{
             nuevoVendedor[key]=value;
         });
+
+        const options = {
+            method: 'POST',
+            url: 'http://localhost:5000/miaplicacion/nuevo',
+            headers: {'Content-Type': 'application/json'},
+            data: {
+              nombres: nuevoVendedor.nombres,
+              apellidos: nuevoVendedor.apellidos,
+              genero: nuevoVendedor.genero,
+              tipo: nuevoVendedor.tipo,
+              documento: nuevoVendedor.documento,
+              fecha: nuevoVendedor.fecha,
+              correo: nuevoVendedor.correo,
+              telefono: nuevoVendedor.telefono,
+              direccion: nuevoVendedor.direccion,
+              comentarios: nuevoVendedor.comentarios
+            }
+          };
+
+        await axios
+        .request(options)
+        .then(function (response) {
+            console.log(response.data);
+            toast.success("¡ Datos del vendedor registrados exitosamente !");
+          })
+          .catch(function (error) {
+            console.error(error);
+            toast.error("¡ el vendedor no fue registrado !");
+          });
         
         console.log("datos del form enviados", nuevoVendedor);
-        toast.success("¡Datos del vendedor registrados exitosamente!");
+        
     }
 
 
