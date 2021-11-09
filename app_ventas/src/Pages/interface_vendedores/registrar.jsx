@@ -25,7 +25,7 @@ const Registrar=() => {
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:5000/miaplicacion/nuevo',
+            url: 'http://localhost:5000/miaplicacion',
             headers: {'Content-Type': 'application/json'},
             data: {
               nombres: nuevoVendedor.nombres,

@@ -32,7 +32,7 @@ const RegistrarVentas=() => {
             headers: {'Content-Type': 'application/json'},
             data: {
               id: nuevaVenta.idventa,
-              valor: nuevaVenta.valortotalventa,
+              valortotalventa: nuevaVenta.valortotalventa,
               unidades: nuevaVenta.unidades,
               precio: nuevaVenta.preciound,
               fecha: nuevaVenta.fechaventa,
@@ -53,7 +53,7 @@ const RegistrarVentas=() => {
             toast.error("¡ error al registrar la venta !");
           });
         
-        console.log("datos del form enviados", nuevaVenta); // ese console es para poder visualizar en la consola los datos que han sido enviados.
+        console.log("datos del form enviados", nuevaVenta); // este console es para poder visualizar en la consola los datos que han sido enviados.
         
     }
     

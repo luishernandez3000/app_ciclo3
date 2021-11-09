@@ -10,8 +10,6 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 
-
-
 const ConsultarVentas = () => {
 
   const [ventas, setVentas] = useState([]);
@@ -69,12 +67,12 @@ const FilaVenta = ({ventas, setEjecutarConsulta}) =>{
 
   const [infoNuevaVenta, setInfoNuevaVenta] = useState({
       id: ventas.id,
-      valorventa: ventas.valor,
+      valorventa: ventas.valorventa,
       unidades: ventas.unidades,
       precio: ventas.precio,
       fecha: ventas.fecha,
-      nombre: ventas.nombre,
-      documento: ventas.documento,
+      nombre: ventas.nombrecliente,
+      documento: ventas.documentocliente,
       
   });
 
@@ -83,19 +81,22 @@ const FilaVenta = ({ventas, setEjecutarConsulta}) =>{
   method: 'PATCH',
   url: `http://localhost:5000/ventas/${ventas._id}`,
   headers: {'Content-Type': 'application/json'},
-  data: {...infoNuevaVenta}
+  data: { ...infoNuevaVenta }
 };
 
-await axios.request(options).then(function (response) {
+await axios
+.request(options)
+.then(function (response) {
   console.log(response.data);
   toast.success("¡ Datos de la venta actualizados exitosamente !");
-      setEdit(false);
-      setEjecutarConsulta(true)
-}).catch(function (error) {
+  setEdit(false);
+  setEjecutarConsulta(true)
+})
+.catch(function (error) {
   console.error(error);
   toast.error("Error al actualizar la información");
 });
-  };
+};
 
 const eliminarVenta= async () =>{
   const options = {
@@ -121,7 +122,7 @@ return(
     
       <>
       <td><input type="text" value={infoNuevaVenta.id} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, id:e.target.value})} /></td>
-      <td><input type="text" value={infoNuevaVenta.valor} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, valorventa:e.target.value})}/></td>
+      <td><input type="text" value={infoNuevaVenta.valorventa} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, valorventa:e.target.value})}/></td>
       <td><input type="text" value={infoNuevaVenta.unidades} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, unidades:e.target.value})}/></td>
       <td><input type="text" value={infoNuevaVenta.precio} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, precio:e.target.value})}/></td>
       <td><input type="date" value={infoNuevaVenta.fecha} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, fecha:e.target.value})}/></td>
@@ -132,7 +133,7 @@ return(
     ):(
     <>
       <td>{ventas.id}</td>
-      <td>{ventas.valor}</td>
+      <td>{ventas.valorventa}</td>
       <td>{ventas.unidades}</td>
       <td>{ventas.precio}</td>
       <td>{ventas.fecha}</td>
@@ -171,9 +172,9 @@ return(
 
 const Tabla=({ listaVentas, setEjecutarConsulta}) => { 
 
- /*   useEffect(()=>{
-      console.log("este es el listado de vendedores: ", ...listaVentas);
-  }, [listaVentas]); //--> este useEffect es para ver en consola la lista de vendedores en la tabla */
+     useEffect(()=>{
+       console.log("este es el listado de vendedores: ", ...listaVentas);
+      }, [listaVentas]); //--> este useEffect es para ver en consola la lista de vendedores en la tabla
 
   return (
     <div id="tablaVentas">
@@ -190,7 +191,6 @@ const Tabla=({ listaVentas, setEjecutarConsulta}) => {
               <th>Nombre cliente</th>
               <th>Documento cliente</th>
               <th>Acciones</th>
-              
             </tr>
           </thead>
 
