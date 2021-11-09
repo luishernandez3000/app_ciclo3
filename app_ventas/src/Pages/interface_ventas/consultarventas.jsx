@@ -67,36 +67,37 @@ const FilaVenta = ({ventas, setEjecutarConsulta}) =>{
 
   const [infoNuevaVenta, setInfoNuevaVenta] = useState({
       id: ventas.id,
-      valorventa: ventas.valorventa,
-      unidades: ventas.unidades,
-      precio: ventas.precio,
       fecha: ventas.fecha,
-      nombre: ventas.nombrecliente,
       documento: ventas.documentocliente,
+      nombre: ventas.nombrecliente,
+      precio: ventas.precio,
+      unidades: ventas.unidades,
+      valorventa: ventas.valorventa,
       
   });
 
   const actualizarVenta = async () =>{
+    console.log(infoNuevaVenta)
     const options = {
-  method: 'PATCH',
-  url: `http://localhost:5000/ventas/${ventas._id}`,
-  headers: {'Content-Type': 'application/json'},
-  data: { ...infoNuevaVenta }
-};
+    method: 'PATCH',
+    url: `http://localhost:5000/ventas/${ventas._id}`,
+    headers: {'Content-Type': 'application/json'},
+    data: { ...infoNuevaVenta }
+        };
 
-await axios
-.request(options)
-.then(function (response) {
-  console.log(response.data);
-  toast.success("¡ Datos de la venta actualizados exitosamente !");
-  setEdit(false);
-  setEjecutarConsulta(true)
-})
-.catch(function (error) {
-  console.error(error);
-  toast.error("Error al actualizar la información");
-});
-};
+      await axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        toast.success("¡ Datos de la venta actualizados exitosamente !");
+        setEdit(false);
+        setEjecutarConsulta(true)
+      })
+      .catch(function (error) {
+        console.error(error);
+        toast.error("Error al actualizar la información");
+      }); 
+  };
 
 const eliminarVenta= async () =>{
   const options = {
@@ -121,24 +122,24 @@ return(
       {edit ? (
     
       <>
-      <td><input type="text" value={infoNuevaVenta.id} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, id:e.target.value})} /></td>
-      <td><input type="text" value={infoNuevaVenta.valorventa} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, valorventa:e.target.value})}/></td>
-      <td><input type="text" value={infoNuevaVenta.unidades} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, unidades:e.target.value})}/></td>
-      <td><input type="text" value={infoNuevaVenta.precio} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, precio:e.target.value})}/></td>
-      <td><input type="date" value={infoNuevaVenta.fecha} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, fecha:e.target.value})}/></td>
-      <td><input type="text" value={infoNuevaVenta.nombre} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, nombrecliente:e.target.value})}/></td>
-      <td><input type="text" value={infoNuevaVenta.documento} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, documentocliente:e.target.value})}/></td>
+      <td><input type="text" value={infoNuevaVenta.id} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, id: e.target.value})} /></td>
+      <td><input type="date" value={infoNuevaVenta.fecha} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, fecha: e.target.value})}/></td>
+      <td><input type="text" value={infoNuevaVenta.documento} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, documento: e.target.value})}/></td>
+      <td><input type="text" value={infoNuevaVenta.nombre} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, nombre: e.target.value})}/></td>
+      <td><input type="text" readOnly value={infoNuevaVenta.precio} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, precio: e.target.value})}/></td>
+      <td><input type="text" value={infoNuevaVenta.unidades} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, unidades: e.target.value})}/></td>
+      <td><input type="text" readOnly value={infoNuevaVenta.valorventa} onChange={e=>setInfoNuevaVenta({...infoNuevaVenta, valorventa: e.target.value})}/></td>
       
       </>
     ):(
     <>
       <td>{ventas.id}</td>
-      <td>{ventas.valorventa}</td>
-      <td>{ventas.unidades}</td>
-      <td>{ventas.precio}</td>
       <td>{ventas.fecha}</td>
-      <td>{ventas.nombrecliente}</td>
-      <td>{ventas.documentocliente}</td>
+      <td>{ventas.documento}</td>
+      <td>{ventas.nombre}</td>
+      <td>{ventas.precio}</td>
+      <td>{ventas.unidades}</td>
+      <td>{ventas.valorventa}</td>
       
       </>
     )}
@@ -172,9 +173,9 @@ return(
 
 const Tabla=({ listaVentas, setEjecutarConsulta}) => { 
 
-     useEffect(()=>{
+     /* useEffect(()=>{
        console.log("este es el listado de vendedores: ", ...listaVentas);
-      }, [listaVentas]); //--> este useEffect es para ver en consola la lista de vendedores en la tabla
+      }, [listaVentas]); //--> este useEffect es para ver en consola la lista de vendedores en la tabla */
 
   return (
     <div id="tablaVentas">
@@ -184,12 +185,12 @@ const Tabla=({ listaVentas, setEjecutarConsulta}) => {
           <thead>
             <tr>
               <th>id venta</th>
-              <th>Valor total venta</th>
-              <th>unds. vendidas</th>
-              <th>Precio x Und.</th>
               <th>Fecha de venta</th>
-              <th>Nombre cliente</th>
               <th>Documento cliente</th>
+              <th>Nombre cliente</th>
+              <th>Precio x Und.</th>
+              <th>unds. vendidas</th>
+              <th>Valor total venta</th>
               <th>Acciones</th>
             </tr>
           </thead>

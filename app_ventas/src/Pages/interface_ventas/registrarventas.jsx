@@ -32,12 +32,12 @@ const RegistrarVentas=() => {
             headers: {'Content-Type': 'application/json'},
             data: {
               id: nuevaVenta.idventa,
-              valortotalventa: nuevaVenta.valortotalventa,
+              valorventa: nuevaVenta.valortotalventa,
               unidades: nuevaVenta.unidades,
               precio: nuevaVenta.preciound,
               fecha: nuevaVenta.fechaventa,
-              nombrecliente: nuevaVenta.nombrecliente,
-              documentocliente: nuevaVenta.documentocliente,
+              nombre: nuevaVenta.nombrecliente,
+              documento: nuevaVenta.documentocliente,
             }
           };
 
@@ -79,11 +79,11 @@ const RegistrarVentas=() => {
                 <label htmlFor='idventa'><b>Identificador de venta: </b></label><br/>
                 <input name='idventa' type="text" size="35px" required/><br></br><br/>
                 <label htmlFor='valortotalventa'><b>Valor total de venta: </b></label><br/>
-                <input value={tventa} onChange={(e)=> setTventa(e.target.value)} id="tventa" name='valortotalventa'  type="text"  size="35px" required/><br></br><br/>
+                <input value={tventa} readOnly onChange={(e)=> setTventa(e.target.value)} id="tventa" name='valortotalventa'  type="text"  size="35px" required/><br></br><br/>
                 <label htmlFor="unidades" ><b>Unidades vendidas: </b></label>
                 <input value={und} onChange={(e)=> setUnd(e.target.value)} id="und" name='unidades' type="number" size="35px" min={0} max={100} required/><br></br><br/>
                 <label htmlFor='preciound'><b>Precio por unidad: </b></label><br/>
-                <input value={punidad} onChange={(e)=> setPunidad(e.target.value)} id="punidad" name='preciound' type="text" size="35px" required/><br></br><br/>  
+                <input value={punidad} readOnly onChange={(e)=> setPunidad(e.target.value)} id="punidad" name='preciound' type="text" size="35px" required/><br></br><br/>  
                 <label htmlFor='fechaventa'><b>Fecha de venta: </b></label>
                 <input name='fechaventa' type="date" required/><br></br><br/>
                 <label htmlFor='nombrecliente' ><b>Nombre de Cliente: </b> </label> <br/>
