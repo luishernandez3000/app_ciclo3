@@ -1,0 +1,43 @@
+.tablitaventas{
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.tablitaventas th{
+    background-color: #848fa8;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.tablitaventas th, .tablitaventas td{
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.tablitaventas tr:nth-child(even){
+    background-color: #c9cad1;
+}
+
+.tablitaventas tr:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#tablaVentas .tablitaventas{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: 'Verdana';
+    height: 150px; /* cambio reciente, borrar si no funciona bien*/
+}
+
+#tablaVentass{
+    text-align: center;
+    width: auto;
+}

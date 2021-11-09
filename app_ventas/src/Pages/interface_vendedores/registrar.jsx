@@ -46,13 +46,14 @@ const Registrar=() => {
         .then(function (response) {
             console.log(response.data);
             toast.success("¡ Datos del vendedor registrados exitosamente !");
+
           })
           .catch(function (error) {
             console.error(error);
             toast.error("¡ el vendedor no fue registrado !");
           });
         
-        console.log("datos del form enviados", nuevoVendedor);
+        // console.log("datos del form enviados", nuevoVendedor); // ese console es para poder visualizar en la consola los datos que han sido enviados.
         
     }
 

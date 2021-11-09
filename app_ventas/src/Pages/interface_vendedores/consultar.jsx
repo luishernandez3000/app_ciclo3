@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { nanoid } from "nanoid";
 import Tooltip from '@mui/material/Tooltip';
 import Dialog from '@mui/material/Dialog';
-import nuevoVendedor from './registrar';
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -83,9 +82,9 @@ const FilaVendedor = ({vendedores, setEjecutarConsulta}) =>{
   const actualizarVendedor = async () =>{
     const options = {
       method: 'PATCH',
-      url: 'http://localhost:5000/miaplicacion/editar',
+      url: `http://localhost:5000/miaplicacion/${vendedores._id}/`,
       headers: {'Content-Type': 'application/json'},
-      data: { ...infoNuevoVendedor, id: vendedores._id }
+      data: { ...infoNuevoVendedor }
     };
     
     await axios
@@ -105,7 +104,7 @@ const FilaVendedor = ({vendedores, setEjecutarConsulta}) =>{
   const eliminarVendedor= async () =>{
     const options = {
       method: 'DELETE',
-      url: 'http://localhost:5000/miaplicacion/eliminar',
+      url: `http://localhost:5000/miaplicacion/${vendedores._id}/`,
       headers: {'Content-Type': 'application/json'},
       data: {id: vendedores._id}
     };
@@ -195,9 +194,9 @@ return(
 
 const Tabla=({ listaVendedores, setEjecutarConsulta }) => { 
 
-   useEffect(()=>{
+   /* useEffect(()=>{
       console.log("este es el listado de vendedores: ", ...listaVendedores, nuevoVendedor);
-  }, [listaVendedores]);
+  }, [listaVendedores]); --> este useEffect es para ver en consola la lista de vendedores en la tabla*/
 
   return (
     <div id="tablaVendedores">

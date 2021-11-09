@@ -1,86 +1,47 @@
-.LogoSS{
-    size: 2cm;
-    display: flex;
-    justify-content: center;
-  
-  }
-  #logo{
-    size: 2cm;
-    width: 2cm;
-  }
-
-.registrate{
-    margin:auto;
-}
-
-#h2{
-    color: rgb(0, 0, 71);
-    text-align: center;
-    font-size: 60px;
-    font-family: 'Tahoma';
-    margin-top: auto;
+.Formularioventas{
     
-}
-
-#h2_2{
-    color: rgb(0, 0, 71);
     text-align: center;
-    font-size: 30px;
-    font-family: 'Tahoma';
-}
-
-.Registro2{
-    text-align: center;
+    background-color: rgb(255, 255, 255);
+    display: -ms-grid;
+    display: grid;
+    height: 900px;
     width: auto;
     margin: auto;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.interno{
-    margin: auto;
-    
-}
-
-.Registro2 label{
-    
-    color: #1e3551;
-    font-family: 'Tahoma';
-    font-size: 25px;
-}
-
-.Registro2 input{
+.internoventas{
+    margin-top: 90px;
     width: auto;
-    height: 35px;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 5px;
+}
+
+.internoventas input{
     font-size: 20px;
     border-radius: 7px;
-    border-color: #1e3551;
-
-}
-
-#cua_fecha{
-    width: 169px;
-}
-
-.docs1{
-    height: 35px;
-    border-radius: 7px;
     padding: 5px;
-    margin-bottom: 5px;
+    border-color:rgb(209, 209, 209);
+    width: auto;
 }
 
-.botonlog{
-    margin: auto;
+.internoventas label{
+    text-align: center;
+    font-size: 23px;
+    font-family: 'Tahoma';
 }
 
-#boton_registrolog{
+.botonventas{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
 
+#boton_enviarv{
     color:white;
-    margin: 0px 50px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    width: 150px;
-    height: 60px;
+    margin: 0px 30px;
+    width: 160px;
+    height: 90px;
     font-size: 20px;
     font-style:Large;
     font-family:Verdana;
@@ -95,7 +56,7 @@
     
 }
 
-#boton_registrolog:hover {
+#boton_enviarv:hover {
 color:white;
 background-color: rgb(140, 140, 140);
 transition: 0.5s;
@@ -107,6 +68,4 @@ background-image: -ms-linear-gradient(top, #5bd6a3, #5bd6a3);
 background-image: -o-linear-gradient(top, #5bd6a3, #5bd6a3);
 background-image: linear-gradient(to bottom,#5bd6a3, #5bd6a3);
 border-color: #5bd6a3;
-
 }
-
