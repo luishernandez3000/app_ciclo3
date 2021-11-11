@@ -8,6 +8,9 @@ import Consultar from 'Pages/interface_vendedores/consultar';
 import Ventas from 'Pages/interface_ventas/ventas'
 import RegistrarVentas from 'Pages/interface_ventas/registrarventas'
 import ConsultarVentas from 'Pages/interface_ventas/consultarventas';
+import ProductForm from 'Pages/interface_productos/registrar/ProductForm';
+import ProductView from 'Pages/interface_productos/listar/ProductView';
+import Productos from 'Pages/interface_productos/Productos';
 
 
 function App() {
@@ -23,7 +26,10 @@ function App() {
             <Route path="/ventas" element={<Ventas/>} exact/>
             <Route path="/registrar_ventas" element={<RegistrarVentas/>} exact/>
             <Route path="/consultar_ventas" element={<ConsultarVentas/>} exact/>
-            
+            <Route path="/productos" element={<Productos/>} exact/>
+            <Route path="/registrar_productos" element={<ProductForm/>} exact/>
+            <Route path="/consultar_productos" element={<ProductView/>} exact/>
+
          </Routes>
     </BrowserRouter>
   );

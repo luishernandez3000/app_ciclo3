@@ -69,8 +69,8 @@ const RegistrarVentas=() => {
 
     return(
         <div>
-           <Header>
-                <div>REGISTRAR NUEVA VENTA</div>
+            <Header>
+              <div>REGISTRAR NUEVA VENTA</div>
             </Header>
             
             <div className='Formularioventas'>
